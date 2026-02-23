@@ -41,7 +41,6 @@
     background: linear-gradient(160deg, #1C1208 0%, #3B2412 35%, #6B3F20 65%, #C9973A 100%);
   }
 
-  /* Fog layers */
   .fog-layer {
     position: absolute;
     inset: 0;
@@ -68,7 +67,6 @@
     to   { transform: translateX(3%) scaleY(1.05); }
   }
 
-  /* Lanterns */
   .lanterns {
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -109,14 +107,6 @@
   .l6 { left: 78%; background: #C0392B; animation-delay: 1.8s; }
   .l7 { left: 90%; background: #E74C3C; animation-delay: 0.5s; }
 
-  /* Gold line decoration */
-  .gold-line {
-    width: 80px; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-    margin: 0 auto 24px;
-    animation: fadeUp 1.2s ease both;
-  }
-
   .hero-tag {
     font-size: 0.75rem;
     letter-spacing: 0.25em;
@@ -146,26 +136,6 @@
     opacity: 0;
     animation: fadeUp 1s 0.8s ease forwards;
   }
-  .hero-badges {
-    margin-top: 32px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeUp 1s 1s ease forwards;
-  }
-  .badge {
-    padding: 6px 16px;
-    border: 1px solid rgba(201,151,58,0.5);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: var(--gold-light);
-    letter-spacing: 0.1em;
-    backdrop-filter: blur(4px);
-    background: rgba(255,255,255,0.05);
-  }
-
   .scroll-hint {
     position: absolute;
     bottom: 32px;
@@ -185,34 +155,7 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── SECTION WRAPPER ── */
-  .section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 24px;
-  }
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  .section-desc {
-    font-size: 0.95rem;
-    line-height: 1.9;
-    color: var(--ink-light);
-    max-width: 600px;
-  }
-
-  /* ── TRANSPORT CARD ── */
+  /* ── TRANSPORT ── */
   .transport-band {
     background: var(--ink);
     padding: 48px 24px;
@@ -257,15 +200,34 @@
     color: rgba(250,245,234,0.85);
     line-height: 1.7;
   }
-  .bus-route strong {
-    color: var(--gold-light);
-  }
+  .bus-route strong { color: var(--gold-light); }
   .transport-note {
     margin-top: 24px;
     font-size: 0.82rem;
     color: rgba(250,245,234,0.5);
     text-align: center;
     letter-spacing: 0.05em;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 16px;
   }
 
   /* ── TIMELINE ── */
@@ -285,7 +247,7 @@
   .tl-item {
     display: flex;
     gap: 32px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -358,7 +320,7 @@
   .tag-walk { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
   .tag-view { background: #E3F2FD; color: #1565C0; border: 1px solid #90CAF9; }
   .tag-tea  { background: #FCE4EC; color: #C62828; border: 1px solid #EF9A9A; }
-  .tag-bonus{ background: #F3E5F5; color: #6A1B9A; border: 1px solid #CE93D8; }
+  .tag-ice  { background: #E0F7FA; color: #00695C; border: 1px solid #80CBC4; }
 
   .tl-desc {
     font-size: 0.88rem;
@@ -377,8 +339,6 @@
   }
   .tl-tips span { color: var(--gold); font-weight: 600; }
 
-  .emoji-big { font-size: 1.8rem; margin-bottom: 8px; display: block; }
-
   /* ── MAP ── */
   .map-section {
     padding: 0 24px 80px;
@@ -390,13 +350,6 @@
     overflow: hidden;
     box-shadow: var(--shadow);
     border: 1px solid rgba(201,151,58,0.2);
-    position: relative;
-  }
-  .map-wrapper iframe {
-    width: 100%;
-    height: 460px;
-    border: none;
-    display: block;
   }
   .map-caption {
     margin-top: 12px;
@@ -405,8 +358,6 @@
     text-align: center;
     letter-spacing: 0.05em;
   }
-
-  /* Pins legend */
   .pin-legend {
     display: flex;
     flex-wrap: wrap;
@@ -431,15 +382,12 @@
     flex-shrink: 0;
   }
 
-  /* ── NOTES BAND ── */
+  /* ── NOTES ── */
   .notes-band {
     background: var(--gold-pale);
-    padding: 48px 24px;
+    padding: 56px 24px;
   }
-  .notes-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  .notes-inner { max-width: 900px; margin: 0 auto; }
   .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -455,17 +403,6 @@
   .note-icon { font-size: 1.5rem; margin-bottom: 8px; }
   .note-title { font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   .note-text  { font-size: 0.82rem; color: var(--ink-light); line-height: 1.65; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    padding: 32px 24px;
-    text-align: center;
-    font-size: 0.78rem;
-    color: rgba(250,245,234,0.35);
-    letter-spacing: 0.1em;
-  }
-  footer span { color: var(--gold-light); }
 
   /* Divider */
   .gold-divider {
@@ -490,6 +427,16 @@
     flex-shrink: 0;
   }
 
+  footer {
+    background: var(--ink);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(250,245,234,0.35);
+    letter-spacing: 0.1em;
+  }
+  footer span { color: var(--gold-light); }
+
   @media (max-width: 600px) {
     .timeline::before { left: 36px; }
     .tl-dot { width: 72px; }
@@ -502,16 +449,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="lanterns">
-    <div class="lantern l1"></div>
-    <div class="lantern l2"></div>
-    <div class="lantern l3"></div>
-    <div class="lantern l4"></div>
-    <div class="lantern l5"></div>
-    <div class="lantern l6"></div>
+    <div class="lantern l1"></div><div class="lantern l2"></div>
+    <div class="lantern l3"></div><div class="lantern l4"></div>
+    <div class="lantern l5"></div><div class="lantern l6"></div>
     <div class="lantern l7"></div>
   </div>
   <div class="fog-layer"></div>
-
   <p class="hero-tag">新北瑞芳 · 輕鬆一日遊</p>
   <h1>九份 &amp; <em>金瓜石</em></h1>
   <p class="hero-sub">山城老街 × 海景步道 × 礦山秘境</p>
@@ -549,13 +492,34 @@
 <div class="section">
   <p class="section-label">今日行程</p>
   <h2 class="section-title">精簡路線<br>老街 × 一座山 × 海景</h2>
-  <p class="section-desc" style="margin-bottom: 48px">
+  <p class="section-desc" style="margin-bottom:48px;font-size:0.95rem;line-height:1.9;color:var(--ink-light);max-width:600px;">
     針對不太運動的朋友設計，步行量適中，避開長距離爬山，
     保留最精華的景色與美食，輕鬆愉快地玩完一整天。
   </p>
 
   <ul class="timeline">
 
+    <!-- 1 抵達 -->
+    <li class="tl-item">
+      <div class="tl-dot">
+        <span class="tl-time">11:30</span>
+        <div class="tl-circle"></div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <h3 class="tl-name">抵達九份・輕便路散步</h3>
+          <span class="tl-tag tag-walk">散步</span>
+        </div>
+        <p class="tl-desc">
+          公車在<strong>九份老街站</strong>下車，先走老街下方的<strong>輕便路</strong>——
+          人潮比基山街少很多，悠閒感受山城獨特的層疊巷弄。
+          再穿插石階小路往上走，暖暖身體，準備吃午餐。
+        </p>
+        <div class="tl-tips"><span>📍</span> 從公車站沿指標走到輕便路，不到 5 分鐘</div>
+      </div>
+    </li>
+
+    <!-- 2 午餐 -->
     <li class="tl-item">
       <div class="tl-dot">
         <span class="tl-time">12:00</span>
@@ -563,40 +527,43 @@
       </div>
       <div class="tl-card">
         <div class="tl-header">
-          <h3 class="tl-name">抵達九份老街</h3>
-          <span class="tl-tag tag-walk">散步</span>
-        </div>
-        <p class="tl-desc">
-          公車在<strong>九份老街站</strong>下車後，先走老街<strong>下方的輕便路</strong>——人潮比基山街少很多，
-          可以悠閒地看山城巷弄，再穿插石階小路往上走，感受九份獨有的層疊地景。
-        </p>
-        <div class="tl-tips"><span>📍</span> 從公車站沿指標走到輕便路，不到 5 分鐘</div>
-      </div>
-    </li>
-
-    <li class="tl-item">
-      <div class="tl-dot">
-        <span class="tl-time">12:30</span>
-        <div class="tl-circle"></div>
-      </div>
-      <div class="tl-card">
-        <div class="tl-header">
-          <h3 class="tl-name">基山街吃午餐</h3>
+          <h3 class="tl-name">長榮小吃 · 午餐</h3>
           <span class="tl-tag tag-food">美食</span>
         </div>
         <p class="tl-desc">
-          沿基山街覓食，鎖定這幾間排隊名物：<br><br>
-          🍜 <strong>魚丸伯</strong>（17號）— 在地 60 年，魚丸湯 + 豆干包<br>
-          🫙 <strong>阿蘭草仔粿</strong>（90號）— 一顆 15 元，必排！ 紅豆 + 菜脯<br>
-          🍡 <strong>阿柑姨芋圓</strong>（豎崎路 5 號）— 面海景吃冰
+          九份在地老字號，鮮魚湯麵、滷肉飯等家常料理
+          分量實在、價格親民，深受當地人喜愛。
+          選個靠窗的位子，邊吃邊感受山城午後悠閒氣氛。
         </p>
-        <div class="tl-tips"><span>💡</span> 阿蘭草仔粿人最多，建議一到就先去排隊</div>
+        <div class="tl-tips"><span>💡</span> 假日用餐時段人潮較多，建議提早抵達，或錯開尖峰後再來</div>
       </div>
     </li>
 
+    <!-- 3 冰 -->
     <li class="tl-item">
       <div class="tl-dot">
-        <span class="tl-time">14:00</span>
+        <span class="tl-time">13:00</span>
+        <div class="tl-circle rest"></div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <h3 class="tl-name">阿柑姨芋圓 · 面海景吃冰</h3>
+          <span class="tl-tag tag-ice">甜點</span>
+        </div>
+        <p class="tl-desc">
+          九份最經典的芋圓老店，位在豎崎路頂端，
+          露天座位一覽無遺地面向基隆海峽。
+          熱芋圓 Q 彈有嚼勁，冷天喝碗熱湯更暖心；
+          天氣好時外帶一碗坐在石階上吹海風，是九份最幸福的一刻。
+        </p>
+        <div class="tl-tips"><span>📍</span> 豎崎路 5 號 · 門口就是海景，天晴視野可達基隆嶼</div>
+      </div>
+    </li>
+
+    <!-- 4 阿妹茶樓 -->
+    <li class="tl-item">
+      <div class="tl-dot">
+        <span class="tl-time">13:45</span>
         <div class="tl-circle rest"></div>
       </div>
       <div class="tl-card">
@@ -613,6 +580,7 @@
       </div>
     </li>
 
+    <!-- 5 勸濟堂 -->
     <li class="tl-item">
       <div class="tl-dot">
         <span class="tl-time">15:00</span>
@@ -620,18 +588,19 @@
       </div>
       <div class="tl-card">
         <div class="tl-header">
-          <h3 class="tl-name">搭公車到勸濟堂</h3>
+          <h3 class="tl-name">搭公車到勸濟堂 · 山頂豆花</h3>
           <span class="tl-tag tag-view">海景</span>
         </div>
         <p class="tl-desc">
           搭公車前往金瓜石的<strong>勸濟堂站</strong>（1062 直達），
           步行約 5 分鐘上坡即到達<strong>山頂豆花</strong>，
-          這裡是露天座位，可以眺望整座基隆山，視野絕佳。
+          露天座位可以眺望整座基隆山，視野絕佳。
         </p>
         <div class="tl-tips"><span>☁️</span> 就算起霧也很美，有種神秘山城感</div>
       </div>
     </li>
 
+    <!-- 6 報時山 -->
     <li class="tl-item">
       <div class="tl-dot">
         <span class="tl-time">15:30</span>
@@ -639,11 +608,11 @@
       </div>
       <div class="tl-card">
         <div class="tl-header">
-          <h3 class="tl-name">報時山步道 · 100 公尺看陰陽海</h3>
+          <h3 class="tl-name">報時山步道 · 百步看陰陽海</h3>
           <span class="tl-tag tag-walk">輕鬆步道</span>
         </div>
         <p class="tl-desc">
-          這是整個區域<strong>最輕鬆的觀景步道</strong>，只需走 100 公尺，
+          整個區域<strong>最輕鬆的觀景步道</strong>，只需走約 100 公尺，
           就能一覽金黃與深藍交錯的<strong>陰陽海</strong>奇景，
           以及無耳茶壺山的剪影。停車場旁邊，幾乎無坡度，老少咸宜。
           旁邊還有<strong>六坑斜坡索道遺跡</strong>可以拍照。
@@ -652,6 +621,7 @@
       </div>
     </li>
 
+    <!-- 7 黃金博物館 -->
     <li class="tl-item">
       <div class="tl-dot">
         <span class="tl-time">16:30</span>
@@ -659,7 +629,7 @@
       </div>
       <div class="tl-card">
         <div class="tl-header">
-          <h3 class="tl-name">黃金博物館逛逛</h3>
+          <h3 class="tl-name">黃金博物館 · 日式礦山園區</h3>
           <span class="tl-tag tag-view">文化景點</span>
         </div>
         <p class="tl-desc">
@@ -667,28 +637,9 @@
           散步其中宛如走進日治時代的山城。
           若想進館看百公斤金磚，買票即可（NT$80）。
           順著園區步道走到<strong>黃金神社遺址</strong>（約 15 分鐘上坡），
-          可以俯瞰陰陽海和山景，是超熱門拍照點。
+          可以俯瞰陰陽海和山景，下午 4∼5 點光線最美，是熱門拍照點。
         </p>
         <div class="tl-tips"><span>📍</span> 金光路 8 號 · 平日至 17:00，假日至 18:00</div>
-      </div>
-    </li>
-
-    <li class="tl-item">
-      <div class="tl-dot">
-        <span class="tl-time">傍晚</span>
-        <div class="tl-circle rest"></div>
-      </div>
-      <div class="tl-card">
-        <div class="tl-header">
-          <h3 class="tl-name">十三層遺址夜間點燈（選）</h3>
-          <span class="tl-tag tag-bonus">加碼</span>
-        </div>
-        <p class="tl-desc">
-          若不急著回去，傍晚前往<strong>水湳洞</strong>（搭856公車約10分鐘），
-          18:00 起十三層遺址打上琥珀色燈光，
-          配上陰陽海夜景，是整個水金九地區最難忘的夜景。
-        </p>
-        <div class="tl-tips"><span>🌙</span> 點燈時間 18:00 – 21:00 · 長仁亭觀景台角度最好</div>
       </div>
     </li>
 
@@ -702,21 +653,22 @@
 <div class="map-section">
   <div class="gold-divider"><div class="divider-gem"></div></div>
   <p class="section-label">景點地圖</p>
-  <h2 class="section-title" style="margin-bottom: 24px">今日路線總覽</h2>
+  <h2 class="section-title" style="margin-bottom:24px">今日路線總覽</h2>
 
   <div class="map-wrapper">
     <div id="map" style="width:100%;height:460px;"></div>
   </div>
 
   <div class="pin-legend">
-    <div class="pin-item"><div class="pin-dot" style="background:#C0392B"></div>① 九份老街</div>
-    <div class="pin-item"><div class="pin-dot" style="background:#C9973A"></div>② 阿妹茶樓</div>
-    <div class="pin-item"><div class="pin-dot" style="background:#2E7D32"></div>③ 勸濟堂・山頂豆花</div>
-    <div class="pin-item"><div class="pin-dot" style="background:#1565C0"></div>④ 報時山步道</div>
-    <div class="pin-item"><div class="pin-dot" style="background:#8E44AD"></div>⑤ 黃金博物館</div>
-    <div class="pin-item"><div class="pin-dot" style="background:#555"></div>⑥ 十三層遺址</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#C0392B"></div>① 九份老街・輕便路</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#2E7D32"></div>② 長榮小吃</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#00897B"></div>③ 阿柑姨芋圓</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#C9973A"></div>④ 阿妹茶樓</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#1565C0"></div>⑤ 勸濟堂・山頂豆花</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#6A1B9A"></div>⑥ 報時山步道</div>
+    <div class="pin-item"><div class="pin-dot" style="background:#8E44AD"></div>⑦ 黃金博物館</div>
   </div>
-  <p class="map-caption">路線由西往東 · 九份 → 金瓜石 → 水湳洞 ・ 點擊標記可查看景點名稱</p>
+  <p class="map-caption">路線由西往東 · 九份 → 金瓜石 ・ 點擊標記可查看景點名稱</p>
 </div>
 
 <!-- NOTES -->
@@ -738,7 +690,7 @@
       <div class="note-card">
         <div class="note-icon">💳</div>
         <div class="note-title">帶現金</div>
-        <div class="note-text">阿蘭草仔粿、魚丸伯等老店多為現金，建議帶 500 ∼ 1000 元現金備用。</div>
+        <div class="note-text">長榮小吃、阿柑姨等老店多為現金，建議帶 500 ∼ 1000 元現金備用。</div>
       </div>
       <div class="note-card">
         <div class="note-icon">📸</div>
@@ -748,7 +700,7 @@
       <div class="note-card">
         <div class="note-icon">⏰</div>
         <div class="note-title">早去為妙</div>
-        <div class="note-text">建議 11:00 前到九份，避開下午觀光客最高峰，阿蘭草仔粿排隊時間也短很多。</div>
+        <div class="note-text">建議 11:00 前到九份，避開下午觀光客最高峰，長榮小吃排隊時間也短很多。</div>
       </div>
       <div class="note-card">
         <div class="note-icon">🚌</div>
@@ -760,11 +712,13 @@
 </div>
 
 <!-- FOOTER -->
-
+<footer>
+  九份 &amp; 金瓜石一日遊 · <span>新北瑞芳</span> · 輕鬆慢遊版
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-  // ── Timeline scroll animation ──
+  // Timeline scroll animation
   const items = document.querySelectorAll('.tl-item');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -775,21 +729,19 @@
   }, { threshold: 0.15 });
   items.forEach(el => obs.observe(el));
 
-  // ── Leaflet Map ──
+  // Leaflet Map
   const map = L.map('map', {
-    center: [25.1075, 121.856],
+    center: [25.108, 121.853],
     zoom: 14,
     zoomControl: true,
     scrollWheelZoom: false
   });
 
-  // OpenStreetMap tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 19
   }).addTo(map);
 
-  // Custom circle marker factory
   function makeIcon(color, num) {
     return L.divIcon({
       className: '',
@@ -797,7 +749,7 @@
         width:34px;height:34px;border-radius:50%;
         background:${color};color:#fff;
         display:flex;align-items:center;justify-content:center;
-        font-family:'Noto Serif TC',serif;font-size:13px;font-weight:700;
+        font-family:'Noto Serif TC',serif;font-size:12px;font-weight:700;
         border:3px solid #fff;
         box-shadow:0 2px 10px rgba(0,0,0,0.35);
         cursor:pointer;
@@ -809,30 +761,27 @@
   }
 
   const spots = [
-    { latlng: [25.1098, 121.8441], color: '#C0392B', num: '①', name: '九份老街', desc: '輕便路散步・基山街美食' },
-    { latlng: [25.1088, 121.8430], color: '#C9973A', num: '②', name: '阿妹茶樓', desc: '景觀茶館・10:00–21:30' },
-    { latlng: [25.1068, 121.8625], color: '#2E7D32', num: '③', name: '勸濟堂・山頂豆花', desc: '眺望基隆山・露天座位' },
-    { latlng: [25.1060, 121.8615], color: '#1565C0', num: '④', name: '報時山步道', desc: '100公尺看陰陽海・免費' },
-    { latlng: [25.1048, 121.8608], color: '#8E44AD', num: '⑤', name: '黃金博物館', desc: '金光路8號・假日至18:00' },
-    { latlng: [25.1178, 121.8595], color: '#555',    num: '⑥', name: '十三層遺址', desc: '夜間點燈 18:00–21:00' },
+    { latlng: [25.1098, 121.8441], color: '#C0392B', num: '①', name: '九份老街・輕便路', desc: '散步・感受山城層疊地景' },
+    { latlng: [25.1092, 121.8438], color: '#2E7D32', num: '②', name: '長榮小吃', desc: '在地家常料理・午餐' },
+    { latlng: [25.1088, 121.8433], color: '#00897B', num: '③', name: '阿柑姨芋圓', desc: '豎崎路 5 號・面海景吃冰' },
+    { latlng: [25.1085, 121.8430], color: '#C9973A', num: '④', name: '阿妹茶樓', desc: '市下巷 20 號・10:00–21:30' },
+    { latlng: [25.1068, 121.8625], color: '#1565C0', num: '⑤', name: '勸濟堂・山頂豆花', desc: '眺望基隆山・露天座位' },
+    { latlng: [25.1060, 121.8615], color: '#6A1B9A', num: '⑥', name: '報時山步道', desc: '100 公尺看陰陽海・免費' },
+    { latlng: [25.1048, 121.8608], color: '#8E44AD', num: '⑦', name: '黃金博物館', desc: '金光路 8 號・假日至 18:00' },
   ];
 
-  const latlngs = spots.map(s => s.latlng);
-
-  // Draw dashed polyline route
-  L.polyline(latlngs, {
+  L.polyline(spots.map(s => s.latlng), {
     color: '#C9973A',
     weight: 2.5,
-    opacity: 0.7,
+    opacity: 0.65,
     dashArray: '8, 8'
   }).addTo(map);
 
-  // Add markers with popups
   spots.forEach(s => {
     L.marker(s.latlng, { icon: makeIcon(s.color, s.num) })
       .addTo(map)
       .bindPopup(`
-        <div style="font-family:'Noto Serif TC',serif;min-width:120px;">
+        <div style="font-family:'Noto Serif TC',serif;min-width:130px;">
           <strong style="font-size:14px;color:#1C1208;">${s.name}</strong><br>
           <span style="font-size:12px;color:#6B5340;">${s.desc}</span>
         </div>
